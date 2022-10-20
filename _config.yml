@@ -29,9 +29,15 @@ twitter_username: samflender
 github_username: sflender
 linkedin_username: sflender
 
+show_drafts: True
+
 # Build settings
 theme: minima
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+collections:
+  - external_feed
+  - medium_posts
