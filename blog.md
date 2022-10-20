@@ -4,7 +4,7 @@ title: Blog
 permalink: /blog/
 ---
 
-You can find all of my writing on [Medium](https://medium.com/@samuel.flender/membership), most of which has been published with Towards Data Science. Make sure to click the "Follow" and "Subscribe" buttons so that you get notified of my new posts in the future. 
+You can find all of my writing on [Medium](https://medium.com/@samuel.flender), most of which has been published with Towards Data Science. Make sure to click the "Follow" and "Subscribe" buttons so that you get notified of my new posts in the future. 
 
 My articles on Medium are behind a paywall, and you'll need a Medium subscription to view all of them (as well as the articles from other authors that choose to publish behind the paywall). Medium pays me a fraction of the subscription fees as royalties for my content, similar to how an artist is being paid on Spotify. It's not a lot, but it helps me stay motivated. 
 
