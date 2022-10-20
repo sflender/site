@@ -6,10 +6,12 @@ layout: default
 ---
 
 # Welcome!
-I'm Samuel (Sam) Flender, a scientist, ML practitioner, and writer. I created this website as a "one-stop-shop" to share some of my work.
+I'm Samuel (Sam) Flender, a physicist, data scientist, ML engineer, thinker, blogger, and avid mountain biker. I created this website to showcase some of the content I've been creating online.
 
-## What I do for a living
-As of October 2022, I'm an ML engineer at Meta. Before that, I was Applied Scientist at Amazon, and before that Data Scientist at JP Morgan Chase. Chase was my first industry job, and before that I was working in Academia, first as PhD student at the University of Helsinki, and then as postdoc at Argonne National Laboratory in Lemont, Illinois. My background is in Physics.
+## A brief bio
+As of October 2022, I'm an ML engineer at Meta in Seattle. Before that, I was Applied Scientist at Amazon, and before that Data Scientist at JP Morgan Chase. Chase was my first industry job, and before that I was working in Academia, first as PhD student at the University of Helsinki, and then as postdoc at Argonne National Laboratory in Lemont, Illinois. My PhD was in Physics, in particular I specialized in the subject of Cosmology, i.e. the study of the Universe at large scales.
 
 ## What I write about 
-I started writing about Machine Learning and Data Science back in 2019 when I was working as Data Scientist at Chase. At first I wanted to have a channel to write about my own learnings about ML and data science, but over time my blog evolved and included ML deep-dives as well as practical tips for data scientists and ML engineers, while my audience grew to more than 1K (as of October 2022). Find out more under the Blog tab above.
+I started writing about Machine Learning and Data Science back in 2019 when I was working as Data Scientist at Chase. At first I wanted to have a channel to write about my own learnings about ML and data science, but over time my blog evolved and included ML deep-dives as well as practical tips for data scientists and ML engineers, while my audience grew to more than 1K (as of October 2022).
+- find out more about my [blog](https://samflender.com/blog/)
+- find out more about my [book](https://samflender.com/books/)

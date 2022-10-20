@@ -4,15 +4,9 @@ title: Blog
 permalink: /blog/
 ---
 
-You can find all of my writing on [Medium](https://medium.com/@samuel.flender), most of which has been published with Towards Data Science. Make sure to click the "Follow" and "Subscribe" buttons so that you get notified of my new posts in the future. 
+You can find all of my writing on [Medium](https://medium.com/@samuel.flender), most of which has been published with the Medium publication Towards Data Science. Make sure to click the "Follow" and "Subscribe" buttons so that you get notified of my new posts in the future. (Don't have a Medium subscription? Sign up using my [referral link](https://medium.com/@samuel.flender/membership) ).
 
-My articles on Medium are behind a paywall, and you'll need a Medium subscription to view all of them (as well as the articles from other authors that choose to publish behind the paywall). Medium pays me a fraction of the subscription fees as royalties for my content, similar to how an artist is being paid on Spotify. It's not a lot, but it helps me stay motivated. 
-
-👉 Don't have a Medium subscription? Sign up using my [referral link](https://medium.com/@samuel.flender/membership). 
-
-👉 Don't want to purchase a Medium subscription, but want to have a curated selection of my best articles? Check out my e-book under the Book tab above.
-
-I'm still working on integrating my Medium blog with this website. Until then, here's a hand-curated list of some of my articles on Medium, as of October 2022:
+*Here are some recent articles from my Medium blog:*
 
 **[Class Imbalance in Machine Learning Problems: A Practical Guide](https://medium.com/p/4fb81eee0041)**\
 Five lessons from the trenches of applied data science

@@ -18,10 +18,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: samflender
+title: samflender.com
 email: samuel dot flender at googlemail dot com
 description: >- # this means to ignore newlines until "baseurl:"
-  Samuel (Sam) Flender is a Scientist, Machine Learning practitioner, and writer.
+  Physics meets Machine Learning
 # I comment the two lines below out, see https://stackoverflow.com/a/64778847
 #baseurl: "" # the subpath of your site, e.g. /blog  
 #url: "" # the base hostname & protocol for your site, e.g. http://example.com
