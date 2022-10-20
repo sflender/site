@@ -14,4 +14,4 @@ As of October 2022, I'm an ML engineer at Meta in Seattle. Before that, I was Ap
 ## What I write about 
 I started writing about Machine Learning and Data Science back in 2019 when I was working as Data Scientist at Chase. At first I wanted to have a channel to write about my own learnings about ML and data science, but over time my blog evolved and included ML deep-dives as well as practical tips for data scientists and ML engineers, while my audience grew to more than 1K (as of October 2022).
 - find out more about my [blog](https://samflender.com/blog/)
-- find out more about my [book](https://samflender.com/books/)
+- find out more about my [book](https://samflender.com/book/)
