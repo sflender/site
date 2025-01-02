@@ -4,9 +4,9 @@ title: Blog
 permalink: /blog/
 ---
 
-You can find all of my writing on [Medium](https://medium.com/@samuel.flender), most of which has been published with the Medium publication Towards Data Science. Make sure to click the "Follow" and "Subscribe" buttons so that you get notified of my new posts in the future. (Don't have a Medium subscription? Sign up using my [referral link](https://medium.com/@samuel.flender/membership) ).
+You can find my writing on my Newsletter, [Machine Learning Frontiers](https://mlfrontiers.substack.com), and on [Medium](https://medium.com/@samuel.flender). (Medium requires a subscription - feel free to use my [referral link](https://medium.com/@samuel.flender/membership)).
 
-## My Favorites
+## Some of my favorites
 
 ### Machine Learning
 
@@ -40,7 +40,3 @@ The black hole information paradox
 
 **[The Galactic Island Hypothesis](https://medium.com/towards-data-science/the-galactic-island-hypothesis-874f28a443d5)**\
 New research provides a quantitative solution to Fermi’s paradox
-
-## Recents (via Twitter)
-
-<a class="twitter-timeline" href="https://twitter.com/samflender?ref_src=twsrc%5Etfw">Tweets by samflender</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
