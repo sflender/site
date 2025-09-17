@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - samflender.com</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        a {
+            color: #007acc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .substack-post {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .substack-post:last-child {
+            border-bottom: none;
+        }
+        .substack-post h3 {
+            margin-bottom: 0.5rem;
+        }
+        .substack-post h3 a {
+            color: #333;
+            text-decoration: none;
+        }
+        .substack-post h3 a:hover {
+            color: #007acc;
+            text-decoration: underline;
+        }
+        .post-description {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+        .post-date {
+            color: #999;
+            font-size: 0.9em;
+            margin: 0;
+        }
+        .substack-error {
+            color: #666;
+            font-style: italic;
+        }
+        .substack-error a {
+            color: #007acc;
+        }
+        .favorites {
+            margin-top: 3rem;
+        }
+        .favorites h2 {
+            border-top: 1px solid #eee;
+            padding-top: 2rem;
+        }
+        .favorites h3 {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blog</h1>
+    
+    <p>You can find my writing on my Newsletter, <a href="https://mlfrontiers.substack.com">Machine Learning Frontiers</a>, and on <a href="https://medium.com/@samuel.flender">Medium</a>. (Medium requires a subscription - feel free to use my <a href="https://medium.com/@samuel.flender/membership">referral link</a>).</p>
+
+    <h2>Latest</h2>
+
+    <div id="substack-feed">
+        <p><em>Loading latest posts from <a href="https://mlfrontiers.substack.com" target="_blank" rel="noopener">Machine Learning Frontiers</a>...</em></p>
+    </div>
+
+    <div class="favorites">
+        <h2>Some of my favorites</h2>
+
+        <h3>Machine Learning</h3>
+
+        <p><strong><a href="https://medium.com/p/4fb81eee0041">Class Imbalance in Machine Learning Problems: A Practical Guide</a></strong><br>
+        Five lessons from the trenches of applied data science</p>
+
+        <p><strong><a href="https://medium.com/p/de58acbdb04a">The Joy of A/B Testing: Theory, Practice, and Pitfalls</a></strong><br>
+        How today's tech companies make data-driven decisions in Machine Learning production</p>
+
+        <p><strong><a href="https://medium.com/p/560e729f81d2">Is My Model Really Better?</a></strong><br>
+        Why ML models that look good on paper are not guaranteed to work well in production</p>
+
+        <p><strong><a href="https://medium.com/p/40d2ff9960af">Learning to rank: A primer</a></strong><br>
+        The algorithms that power search engines, recommender systems, social media feeds and ads</p>
+
+        <p><strong><a href="https://medium.com/towards-data-science/algorithms-are-not-enough-fdee1d65e536">Algorithms are not enough</a></strong><br>
+        The next breakthrough in AI requires a rethinking of our hardware</p>
+
+        <h3>Productivity</h3>
+
+        <p><strong><a href="https://medium.com/p/20ed0070fdd7">The Most Effective Creatives Maximize Leverage, Not Hours Worked</a></strong><br>
+        Forget 'quiet quitting': 3 strategies for creating more business impact with fewer hours</p>
+
+        <p><strong><a href="https://medium.com/towards-data-science/the-science-of-time-management-7297600e8a0e">The Science of Time Management</a></strong><br>
+        How to optimize your time with the help of Computer Science</p>
+
+        <h3>Physics</h3>
+
+        <p><strong><a href="https://medium.com/think-like-a-physicist/how-the-universe-is-deleted-5c3f60f254ea">How the Universe is deleted</a></strong><br>
+        The black hole information paradox</p>
+
+        <p><strong><a href="https://medium.com/towards-data-science/the-galactic-island-hypothesis-874f28a443d5">The Galactic Island Hypothesis</a></strong><br>
+        New research provides a quantitative solution to Fermi's paradox</p>
+    </div>
+
+    <script>
+        // Substack Feed Fetcher
+        document.addEventListener('DOMContentLoaded', function() {
+            const feedContainer = document.getElementById('substack-feed');
+            if (!feedContainer) return;
+
+            const rssUrl = 'https://mlfrontiers.substack.com/feed';
+            const proxyUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl);
+
+            console.log('Fetching Substack feed...');
+            
+            fetch(proxyUrl)
+                .then(response => {
+                    console.log('Response status:', response.status);
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Feed data:', data);
+                    if (data.status === 'ok' && data.items) {
+                        displayPosts(data.items.slice(0, 5)); // Show latest 5 posts
+                    } else {
+                        showError('Unable to load posts from Substack feed.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching Substack feed:', error);
+                    showError('Error loading posts. Please try again later.');
+                });
+
+            function displayPosts(posts) {
+                console.log('Displaying posts:', posts);
+                const postsHtml = posts.map(post => {
+                    const pubDate = new Date(post.pubDate);
+                    const formattedDate = pubDate.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    // Clean up description - remove HTML tags and truncate
+                    const description = post.description
+                        .replace(/<[^>]*>/g, '') // Remove HTML tags
+                        .replace(/&[^;]+;/g, ' ') // Remove HTML entities
+                        .trim()
+                        .substring(0, 200);
+
+                    return `
+                        <div class="substack-post">
+                            <h3><a href="${post.link}" target="_blank" rel="noopener">${post.title}</a></h3>
+                            <p class="post-description">${description}${description.length >= 200 ? '...' : ''}</p>
+                            <p class="post-date"><em>${formattedDate}</em></p>
+                        </div>
+                    `;
+                }).join('');
+
+                feedContainer.innerHTML = postsHtml;
+            }
+
+            function showError(message) {
+                feedContainer.innerHTML = `
+                    <div class="substack-error">
+                        <p><em>${message}</em></p>
+                        <p>Visit <a href="https://mlfrontiers.substack.com" target="_blank" rel="noopener">Machine Learning Frontiers</a> directly to read the latest posts.</p>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

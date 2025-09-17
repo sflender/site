@@ -6,6 +6,12 @@ permalink: /blog/
 
 You can find my writing on my Newsletter, [Machine Learning Frontiers](https://mlfrontiers.substack.com), and on [Medium](https://medium.com/@samuel.flender). (Medium requires a subscription - feel free to use my [referral link](https://medium.com/@samuel.flender/membership)).
 
+## Latest
+
+{% include substack-feed.html %}
+
+
+
 ## Some of my favorites
 
 ### Machine Learning

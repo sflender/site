@@ -1,0 +1,114 @@
+<div id="substack-feed">
+  <p><em>Loading latest posts from <a href="https://mlfrontiers.substack.com" target="_blank" rel="noopener">Machine Learning Frontiers</a>...</em></p>
+</div>
+
+<style>
+.substack-post {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.substack-post:last-child {
+  border-bottom: none;
+}
+
+.substack-post h3 {
+  margin-bottom: 0.5rem;
+}
+
+.substack-post h3 a {
+  color: #333;
+  text-decoration: none;
+}
+
+.substack-post h3 a:hover {
+  color: #007acc;
+  text-decoration: underline;
+}
+
+.post-description {
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.post-date {
+  color: #999;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.substack-error {
+  color: #666;
+  font-style: italic;
+}
+
+.substack-error a {
+  color: #007acc;
+}
+</style>
+
+<script>
+// Substack Feed Fetcher
+// Fetches and displays latest posts from ML Frontiers Substack
+
+document.addEventListener('DOMContentLoaded', function() {
+    const feedContainer = document.getElementById('substack-feed');
+    if (!feedContainer) return;
+
+    const rssUrl = 'https://mlfrontiers.substack.com/feed';
+    const proxyUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl);
+
+    fetch(proxyUrl)
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'ok' && data.items) {
+                displayPosts(data.items.slice(0, 5)); // Show latest 5 posts
+            } else {
+                showError('Unable to load posts from Substack feed.');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching Substack feed:', error);
+            showError('Error loading posts. Please try again later.');
+        });
+
+    function displayPosts(posts) {
+        const postsHtml = posts.map(post => {
+            const pubDate = new Date(post.pubDate);
+            const formattedDate = pubDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // Clean up description - remove HTML tags and truncate
+            const description = post.description
+                .replace(/<[^>]*>/g, '') // Remove HTML tags
+                .replace(/&[^;]+;/g, ' ') // Remove HTML entities
+                .trim()
+                .substring(0, 200);
+
+            return `
+                <div class="substack-post">
+                    <h3><a href="${post.link}" target="_blank" rel="noopener">${post.title}</a></h3>
+                    <p class="post-description">${description}${description.length >= 200 ? '...' : ''}</p>
+                    <p class="post-date"><em>${formattedDate}</em></p>
+                </div>
+            `;
+        }).join('');
+
+        feedContainer.innerHTML = postsHtml;
+    }
+
+    function showError(message) {
+        feedContainer.innerHTML = `
+            <div class="substack-error">
+                <p><em>${message}</em></p>
+                <p>Visit <a href="https://mlfrontiers.substack.com" target="_blank" rel="noopener">Machine Learning Frontiers</a> directly to read the latest posts.</p>
+            </div>
+        `;
+    }
+});
+</script>
