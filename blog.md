@@ -4,9 +4,13 @@ title: Blog
 permalink: /blog/
 ---
 
-You can find my writing on my Newsletter, [Machine Learning Frontiers](https://mlfrontiers.substack.com), and on [Medium](https://medium.com/@samuel.flender). (Medium requires a subscription - feel free to use my [referral link](https://medium.com/@samuel.flender/membership)).
+<script src="{{ '/assets/js/ml-frontiers-feed.js' | relative_url }}"></script>
+<link rel="stylesheet" href="{{ '/assets/css/ml-frontiers-feed.css' | relative_url }}">
+<div id="ml-frontiers-feed" class="ml-frontiers-feed"></div>
 
-## Some of my favorites
+
+## Medium Gems
+Prior to launching my Newsletter on Substack I wrote a ton on [Medium](https://medium.com/@samuel.flender). Here is a collection of my favorites:
 
 ### Machine Learning
 
@@ -40,3 +44,4 @@ The black hole information paradox
 
 **[The Galactic Island Hypothesis](https://medium.com/towards-data-science/the-galactic-island-hypothesis-874f28a443d5)**\
 New research provides a quantitative solution to Fermi’s paradox
+
